@@ -1,0 +1,11 @@
+{
+  "background_color": "#FFF",
+  "display": "standalone",
+  "name": "De Nieuwe Stad",
+  "short_name": "De Nieuwe Stad",
+  "version": "de_nieuwe_stad",
+  "description": "De Nieuwe Stad App.",
+  "author": "JIDICA4A7A Groep 4",
+  "icons": [],
+  "start_url": "index.html"
+}
