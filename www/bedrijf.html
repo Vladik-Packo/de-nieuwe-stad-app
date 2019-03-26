@@ -1,10 +1,118 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<!--
+    Copyright (c) 2012-2016 Adobe Systems Incorporated. All rights reserved.
 
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
+    <!-- Good default declaration:
+    * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+    * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+    * Disables use of eval() and inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+        * Enable inline JS: add 'unsafe-inline' to default-src
+        * Enable eval(): add 'unsafe-eval' to default-src
+    * Create your own at http://cspisawesome.com
+    -->
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
+
+    <link rel="stylesheet" type="text/css" href="css/bedrijfspagina.css" />
+    <title>Hello World</title>
+
+    <link href="css/app.css" rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link href="css/fonts.css" rel="stylesheet" />
+    <!-- Font Awesome -->
+    <link href="css/fa/css/all.min.css" rel="stylesheet">
+
+    <script src="js/app.js"></script>
+    <!-- Cordova -->
+    <script src="cordova.js" type="text/javascript" defer></script>
+</head>
+
+<body style="background-image:url(https://www.adorama.com/alc/wp-content/uploads/2017/11/shutterstock_114802408.jpg)">
+
+<div class="container">
+    <div class="row">
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="col s12 center flow-text">Bedrijfspagina</div>
+    </div>
+    <br>
+</div>
+
+<div class="app">
+    <div class="container">
+        <div class="row">
+            <button onclick="expand(0)" class="col s12 waves-effect waves-light btn-large grid-item">
+                <p class="tkst-bedrijfspagina">Bedrijf1</p>
+            </button>
+            <div class="info">
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <button onclick="expand(1)" class="col s12 waves-effect waves-light btn-large grid-item">
+                <p class="tkst-bedrijfspagina">Bedrijf1</p>
+            </button>
+            <div class="info">
+                Info over bed
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <button onclick="expand(2)" class="col s12 waves-effect waves-light btn-large grid-item">
+                <p class="tkst-bedrijfspagina">Bedrijf1</p>
+            </button>
+            <div class="info">
+                Info over bed
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <button onclick="expand(3)" class="col s12 waves-effect waves-light btn-large grid-item">
+                <p class="tkst-bedrijfspagina">Bedrijf1</p>
+            </button>
+            <div class="info">
+                Info over bed
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="js/bedrijfspagina.js"></script>
+
+<script type="text/javascript">
+    app.initialize();
+</script>
 </body>
+
 </html>
