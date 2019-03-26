@@ -1,4 +1,14 @@
 function expand(infonmbr) {
     console.log('werkt');
-    document.getElementsByClassName("info")[infonmbr].style.display = "grid";
+
+    let infoclass = document.getElementsByClassName("info");
+
+    if (infoclass[infonmbr].style.display == "none")
+    {
+        infoclass[infonmbr].style.display = "block";
+    }
+    else
+    {
+        infoclass[infonmbr].style.display = "none";
+    }
 }
