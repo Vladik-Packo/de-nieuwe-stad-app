@@ -38,46 +38,77 @@
     -->
     <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
 
-    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <link rel="stylesheet" type="text/css" href="css/bedrijfspagina.css" />
     <title>Hello World</title>
+
+    <link href="css/app.css" rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link href="css/fonts.css" rel="stylesheet" />
+    <!-- Font Awesome -->
+    <link href="css/fa/css/all.min.css" rel="stylesheet">
+
+    <script src="js/app.js"></script>
+    <!-- Cordova -->
+    <script src="cordova.js" type="text/javascript" defer></script>
 </head>
 
-<body>
+<body style="background-image:url(https://www.adorama.com/alc/wp-content/uploads/2017/11/shutterstock_114802408.jpg)">
+
+<div class="container">
+    <div class="row">
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="col s12 center flow-text">Bedrijfspagina</div>
+    </div>
+    <br>
+</div>
+
 <div class="app">
     <div class="container">
-        <button onclick="expand(0)" class="grid-item">
-            <h3>Bedrijf1</h3>
-        </button>
-        <div class="info">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        <div class="row">
+            <button onclick="expand(0)" class="col s12 waves-effect waves-light btn-large grid-item">
+                <p class="tkst-bedrijfspagina">Bedrijf1</p>
+            </button>
+            <div class="info">
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+            </div>
         </div>
     </div>
     <div class="container">
-        <button onclick="expand(1)" class="grid-item">
-            <h3>Bedrijf1</h3>
-        </button>
-        <div class="info">
-            Info over bedrijf 1
+        <div class="row">
+            <button onclick="expand(1)" class="col s12 waves-effect waves-light btn-large grid-item">
+                <p class="tkst-bedrijfspagina">Bedrijf1</p>
+            </button>
+            <div class="info">
+                Info over bed
+            </div>
         </div>
     </div>
     <div class="container">
-        <button onclick="expand(2)" class="grid-item">
-            <h3>Bedrijf1</h3>
-        </button>
-        <div class="info">
-            Info over bedrijf 1
+        <div class="row">
+            <button onclick="expand(2)" class="col s12 waves-effect waves-light btn-large grid-item">
+                <p class="tkst-bedrijfspagina">Bedrijf1</p>
+            </button>
+            <div class="info">
+                Info over bed
+            </div>
         </div>
     </div>
     <div class="container">
-        <button onclick="expand(3)" class="grid-item">
-            <h3>Bedrijf1</h3>
-        </button>
-        <div class="info">
-            Info over bedrijf 1
+        <div class="row">
+            <button onclick="expand(3)" class="col s12 waves-effect waves-light btn-large grid-item">
+                <p class="tkst-bedrijfspagina">Bedrijf1</p>
+            </button>
+            <div class="info">
+                Info over bed
+            </div>
         </div>
     </div>
 </div>
 <script type="text/javascript" src="cordova.js"></script>
-<script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript" src="js/bedrijfspagina.js"></script>
 
 <script type="text/javascript">
     app.initialize();
