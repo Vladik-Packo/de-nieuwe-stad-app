@@ -20,7 +20,21 @@
 
  //functies voor instellingen
 
+ 
+
  function Changecolor(){
- 	confirm("weet u zeker dat u notificaties uit wilt zetten");
+ 	var r = confirm("weet u zeker dat u notificaties uit wilt zetten");
+ if (r == true){
+ 	alert("notificaties uitgeschakeld");
+ }
  }
 
+function Locatievoorzieninginstellingen(){
+	
+var r = confirm("wilt u uw locatievoorziening uitzetten?? Let op!! de app kan niet goed functioneren zonder locatiesvoorziening");
+if (r == true) {
+   alert("locatiesvoorziening uitgeschakeld");
+  } else {
+ 
+}
+}

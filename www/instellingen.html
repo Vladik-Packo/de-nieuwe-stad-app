@@ -11,6 +11,8 @@
         <link href="css/fonts.css" rel="stylesheet" />
         <!-- Font Awesome -->
         <link href="css/fa/css/all.min.css" rel="stylesheet">
+
+        <link rel="stylesheet" type="text/css" href="css/instellingen.css">
         
         <script src="js/app.js"></script>
         <!-- Cordova -->
@@ -28,25 +30,14 @@
         </script>
     </head>
     <body style="background-image:url(https://www.adorama.com/alc/wp-content/uploads/2017/11/shutterstock_114802408.jpg)">
-    <a class="btn btn-small">Login voor bedrijven</a>
-    <a class="btn btn-small" style="float: right">Registreer*</a>
+    <a href="index.html"><img class="terugbutton" src="images/terugbutton.png"></a>
+        <a class="btn btn-small red darken-3" style="float: right">Registreer*</a>
     <br><div style="float: right">*voor persoonlijke notificaties</div>
     <br>
-    <div class="container">
-        <div class="row">
-            <br>
-            <br>
-            <div class="col s12 center flow-text">Instellingen</div>
-           
-
-            
-        </div>
-        <br>
-    </div>
-            <div class="container">
-            	<p>wilt u de notificaties uit- of aanzetten<br>
-            	 <button onclick="Changecolor()" class="waves-effect waves-light btn">Notificaties</button>
-           
-            </div> 
-        </body>
-        </html>
+	<h1>Instellingen</h1><br><br>
+	<h3>Notificaties instellingen</h3><br>
+	<button onclick="Changecolor()">Notificaties uit/aanzetten</button>
+	<h3>Locatievoorziening</h3>
+	<button onclick="Locatievoorzieninginstellingen()">Locatievoorziening uit/aanzetten</button>
+</body>
+</html>
