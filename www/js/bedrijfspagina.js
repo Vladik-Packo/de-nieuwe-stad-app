@@ -12,3 +12,12 @@ function expand(infonmbr) {
         infoclass[infonmbr].style.display = "none";
     }
 }
+function test() {
+
+    xhttp.open("POST", "http://localhost/posttest", true);
+    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhttp.send("fname=Henry&lname=Ford");
+
+
+
+}
