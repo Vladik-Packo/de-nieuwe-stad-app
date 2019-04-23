@@ -30,7 +30,7 @@ var getJSON = function(url, callback) {
 };
 
 function test() {
-    getJSON('http://127.0.0.1/test',
+    getJSON('http://145.120.199.7/test',
         function(err, data) {
 
             if (err !== null) {
