@@ -29,12 +29,9 @@ var getJSON = function(url, callback) {
     xhr.send();
 };
 
-function test(str) {
+function test() {
     getJSON('http://127.0.0.1/test',
         function(err, data) {
-
-
-
 
             if (err !== null) {
                 alert('Something went wrong: ' + err);
@@ -45,11 +42,11 @@ function test(str) {
 
                     let newDiv = document.createElement('div');
                     newDiv.className = "row";
-                    document.getElementsByClassName("container")[i].appendChild(newDiv);
+                    document.getElementsByClassName("container")[1].appendChild(newDiv);
 
                     let divTitle = document.createElement('div');
                     divTitle.className = "col s12 waves-effect waves-light btn-large flip red darken-3";
-                    document.getElementsByClassName('row')[i].appendChild(divTitle);
+                    document.getElementsByClassName('row')[i+1].appendChild(divTitle);
                     divTitle.innerHTML = data[0][i].business.name;
 
                     let divInfo = document.createElement('div');
@@ -63,12 +60,9 @@ function test(str) {
                     document.getElementsByClassName('col s12 flow-text panel grey lighten-2 z-depth-1')[i].appendChild(moreInfo);
 
             }
-
                 $(".flip").click(function(){
                     $(this).parent().find(".panel").slideToggle("fast");
                 });
-
         }
-
-        });
+    });
 }
