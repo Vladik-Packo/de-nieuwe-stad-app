@@ -51,7 +51,7 @@ function test() {
 
                     let divInfo = document.createElement('div');
                     divInfo.className = "col s12 flow-text panel grey lighten-2 z-depth-1";
-                    document.getElementsByClassName('row')[i].appendChild(divInfo);
+                    document.getElementsByClassName('row')[i+1].appendChild(divInfo);
                     divInfo.innerHTML = data[0][i].business.information + "<br><br>lol";
 
                     let moreInfo = document.createElement('a');
