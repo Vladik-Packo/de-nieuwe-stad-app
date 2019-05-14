@@ -25,10 +25,13 @@
   background-color: #66DBDB;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
-  padding: 1rem;
-  padding-top: 5rem;
+  /*padding: 1rem;*/
+  /*padding-top: 5rem;*/
 }
 .tkst-bedrijfspagina {
   padding: 0;
   margin: 0;
 }
+/*.row {*/
+/*  margin: 0;!important*/
+/*}*/
