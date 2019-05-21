@@ -35,18 +35,15 @@
             .row{
                 margin-bottom: 10px;
             }
-            @font-face {
-                font-family: 'Nanum Gothic Coding';
-                font-style: normal;
-                font-weight: 700;
-                src: local('NanumGothicCoding-Bold'), url(fonts/NanumGothicCoding-Bold.ttf) format('ttf');
-                unicode-range: U+f9ca-fa0b, U+ff03-ff05, U+ff07, U+ff0a-ff0b, U+ff0d-ff19, U+ff1b, U+ff1d, U+ff20-ff5b, U+ff5d, U+ffe0-ffe3, U+ffe5-ffe6;
-            }
             h4{
-                font-family: 'Nanum Gothic Coding', monospace;
+                font-family: 'Ubuntu Mono', monospace;
             }
-            a{
-                font-family: 'Nanum Gothic Coding', monospace;
+            li{
+                font-family: 'Ubuntu Mono', monospace;
+            }
+            nav .sidenav-trigger i{
+                width: 100px;
+                text-align: right;
             }
         </style>
         <script>
@@ -65,26 +62,28 @@
     </head>
     <body style="background-image:url(images/background3.png)">
     <nav class="nav-wrapper grey darken-3">
-    <div class="container">
-        <a href="#" class="sidenav-trigger right" data-target="mobile-links">
-            <i class="fas fa-bars"></i>
-        </a>
-        <ul class="left hide-on-med-and-down">
-            <li><a href="sass.html">BEDRIJVEN</a></li>
-            <li><a href="badges.html">PLATTEGROND</a></li>
-            <li><a href="collapsible.html">AGENDA</a></li>
-            <li><a href="collapsible.html">INSTELLINGEN</a></li>
-            <li><a href="collapsible.html">LOGIN VOOR GEBRUIKERS</a></li>
-            <li><a href="collapsible.html">LOGIN VOOR BEDRIJVEN</a></li>
-        </ul>
-    </div>
+        <div class="container">
+            <a href="#" class="sidenav-trigger right" data-target="mobile-links">
+                <i class="fas fa-bars"></i>
+            </a>
+            <ul class="left hide-on-med-and-down">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="bedrijf.html">BEDRIJVEN</a></li>
+                <li><a href="map.html">PLATTEGROND</a></li>
+                <li><a href="agenda.html">AGENDA</a></li>
+                <li><a href="instellingen.html">INSTELLINGEN</a></li>
+                <li><a href="collapsible.html">LOGIN VOOR GEBRUIKERS</a></li>
+                <li><a href="collapsible.html">LOGIN VOOR BEDRIJVEN</a></li>
+            </ul>
+        </div>
     </nav>
 
     <ul class="sidenav" id="mobile-links">
-        <li><a href="sass.html">BEDRIJVEN</a></li>
-        <li><a href="badges.html">PLATTEGROND</a></li>
-        <li><a href="collapsible.html">AGENDA</a></li>
-        <li><a href="collapsible.html">INSTELLINGEN</a></li>
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="bedrijf.html">BEDRIJVEN</a></li>
+        <li><a href="map.html">PLATTEGROND</a></li>
+        <li><a href="agenda.html">AGENDA</a></li>
+        <li><a href="instellingen.html">INSTELLINGEN</a></li>
         <li><a href="collapsible.html">LOGIN VOOR GEBRUIKERS</a></li>
         <li><a href="collapsible.html">LOGIN VOOR BEDRIJVEN</a></li>
     </ul>
