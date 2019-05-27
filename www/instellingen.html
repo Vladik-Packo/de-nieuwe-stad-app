@@ -1,0 +1,90 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <meta name="csrf-token" content="" />
+    <title>De Nieuwe Stad</title>
+
+    <link href="css/app.css" rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link href="css/fonts.css" rel="stylesheet" />
+    <!-- Font Awesome -->
+    <link href="css/fa/css/all.min.css" rel="stylesheet">
+
+    <script src="js/app.js"></script>
+    <!-- Cordova -->
+    <script src="cordova.js" type="text/javascript" defer></script>
+    <style>
+        .border-buttons{
+            border-style: solid;
+            border-width: 2px;
+            border-color: whitesmoke;
+        }
+        .drag-target{
+            width: 46px;
+        }
+        hr{
+            margin-left: 50px;
+            display: block;
+            height: 1px;
+            border: 0;
+            border-top: 4px solid white;
+            padding: 0;
+        }
+        .row{
+            margin-bottom: 10px;
+        }
+        h4{
+            font-family: 'Ubuntu Mono', monospace;
+        }
+        li{
+            font-family: 'Ubuntu Mono', monospace;
+        }
+        nav .sidenav-trigger i{
+            width: 100px;
+            text-align: right;
+        }
+    </style>
+    <script>
+        $( function () {
+            $( document ).on( 'deviceready' , function () {
+                $( '#device' ).html( device.model );
+            });
+        })
+
+        document.addEventListener('DOMContentLoaded', function() {
+            var elems = document.querySelectorAll('.sidenav');
+            var instances = M.Sidenav.init(elems, { edge: 'right'});
+        });
+
+    </script>
+</head>
+<body style="background-image:url(images/background3.png)">
+<nav class="nav-wrapper grey darken-3">
+    <div class="container">
+        <a href="#" class="sidenav-trigger right" data-target="mobile-links">
+            <i class="fas fa-bars"></i>
+        </a>
+        <ul class="left hide-on-med-and-down">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="bedrijf.html">BEDRIJVEN</a></li>
+            <li><a href="map.html">PLATTEGROND</a></li>
+            <li><a href="agenda.html">AGENDA</a></li>
+            <li><a href="instellingen.html">INSTELLINGEN</a></li>
+            <li><a href="collapsible.html">LOGIN VOOR GEBRUIKERS</a></li>
+            <li><a href="collapsible.html">LOGIN VOOR BEDRIJVEN</a></li>
+        </ul>
+    </div>
+</nav>
+
+<ul class="sidenav" id="mobile-links">
+    <li><a href="index.html">HOME</a></li>
+    <li><a href="bedrijf.html">BEDRIJVEN</a></li>
+    <li><a href="map.html">PLATTEGROND</a></li>
+    <li><a href="agenda.html">AGENDA</a></li>
+    <li><a href="instellingen.html">INSTELLINGEN</a></li>
+    <li><a href="collapsible.html">LOGIN VOOR GEBRUIKERS</a></li>
+    <li><a href="collapsible.html">LOGIN VOOR BEDRIJVEN</a></li>
+</ul>
+</body>
+</html>
