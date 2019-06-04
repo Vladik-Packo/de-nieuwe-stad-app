@@ -1,7 +1,7 @@
-console.log($);
+
 
 $(function(){
-	$("#login_btn").click(function(){
+	$("#login").click(function(){
 		var user = $("#email").val();
 		var pass = $("#password").val();
 
@@ -10,7 +10,7 @@ $(function(){
 
 		$.ajax({
 			method: "post",
-			url: "login.php",
+			url: "login.php?",
 			data: data,
 			success: function(data){
 				$("#login_error").html(data);
