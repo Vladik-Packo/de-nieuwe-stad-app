@@ -1,10 +1,10 @@
 
 
 $(function(){
-	$("#login").click(function(){
-		var user = $("#email").val();
+	$("#login").on('click', function (){
+		var email = $("#email").val();
 		var pass = $("#password").val();
-
+console.log(email);
 	var data = "user" + user + "&pass" + pass;
 
 
