@@ -30,7 +30,7 @@ var getJSON = function(url, callback) {
 };
 
 function test() {
-    getJSON('http://145.120.199.7/test',
+    getJSON('http://145.120.199.99:83/api/test',
         function(err, data) {
 
             if (err !== null) {
@@ -48,11 +48,12 @@ function test() {
                     divTitle.className = "col s12 waves-effect waves-light btn-large flip red darken-3";
                     document.getElementsByClassName('row')[i+1].appendChild(divTitle);
                     divTitle.innerHTML = data[0][i].business.name;
+                    console.log(data[0][i].business.name);
 
                     let divInfo = document.createElement('div');
                     divInfo.className = "col s12 flow-text panel grey lighten-2 z-depth-1";
                     document.getElementsByClassName('row')[i+1].appendChild(divInfo);
-                    divInfo.innerHTML = data[0][i].business.information + "<br><br>lol";
+                    divInfo.innerHTML = data[0][i].business.information;
 
                     let moreInfo = document.createElement('a');
                     moreInfo.href="#";
