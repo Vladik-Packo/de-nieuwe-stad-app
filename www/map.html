@@ -24,6 +24,15 @@
         .drag-target{
             width: 46px;
         }
+        body {
+            display: flex;
+            min-height: 100vh;
+            flex-direction: column;
+        }
+
+        main {
+            flex: 1 0 auto;
+        }
         hr{
             margin-left: 50px;
             display: block;
@@ -39,6 +48,15 @@
             font-family: 'Ubuntu Mono', monospace;
         }
         li{
+            font-family: 'Ubuntu Mono', monospace;
+        }
+        a{
+            font-family: 'Ubuntu Mono', monospace;
+        }
+        button{
+            font-family: 'Ubuntu Mono', monospace;
+        }
+        label{
             font-family: 'Ubuntu Mono', monospace;
         }
         nav .sidenav-trigger i{
@@ -90,6 +108,7 @@
     <li><a href="logingebruiker.html">LOGIN VOOR GEBRUIKERS</a></li>
     <li><a href="loginbedrijven.html">LOGIN VOOR BEDRIJVEN</a></li>
 </ul>
+<main>
 <div class="container">
     <div class="row">
         <br>
@@ -99,5 +118,13 @@
     <br>
     <iframe width="100%" height="400" src="https://maphub.net/embed/50714?button=1" frameborder="0"></iframe>
 <script src="js/map.js"></script>
+</main>
+<footer class="grey darken-3" style="padding-bottom: 8px; padding-top: 8px;">
+    <div class="container">
+        <a class="grey-text text-lighten-4 left" href="https://www.denieuwestad.nl/" target="_blank">&copy; 2019 denieuwestad.nl</a>
+        <!--<a class="grey-text text-lighten-4 left" href="#!"><i class="fas fa-user"></i> LOGIN</a>-->
+        <!--<a class="grey-text text-lighten-4 right" href="#!"><i class="fas fa-building"></i> LOGIN</a>-->
+    </div>
+</footer>
 </body>
 </html>

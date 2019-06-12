@@ -24,6 +24,15 @@
             .drag-target{
                 width: 46px;
             }
+            body {
+                display: flex;
+                min-height: 100vh;
+                flex-direction: column;
+            }
+
+            main {
+                flex: 1 0 auto;
+            }
             hr{
                 margin-left: 50px;
                 display: block;
@@ -39,6 +48,15 @@
                 font-family: 'Ubuntu Mono', monospace;
             }
             li{
+                font-family: 'Ubuntu Mono', monospace;
+            }
+            a{
+                font-family: 'Ubuntu Mono', monospace;
+            }
+            button{
+                font-family: 'Ubuntu Mono', monospace;
+            }
+            label{
                 font-family: 'Ubuntu Mono', monospace;
             }
             nav .sidenav-trigger i{
@@ -89,7 +107,7 @@
     </ul>
 
         <br>
-
+<main>
     <div class="container">
         <div class="row">
             <br>
@@ -101,20 +119,28 @@
             <div class="container center-align">
             <div class="row">
                 <div class="col s1"></div>
-                <a href="bedrijf.html" class="col s10 waves-effect waves-light waves-yellow btn-large transparent border-buttons" style="text-align: center">BEDRIJVEN</a>
+                <a href="bedrijf.html" class="col s10 waves-effect waves-light waves-yellow btn-large transparent border-buttons" style="text-align: center"><div class="left"><i class="fas fa-building"></i></div>BEDRIJVEN</a>
             </div>
             <div class="row">
                 <div class="col s1"></div>
-                <a href="map.html" class="col s10 waves-effect waves-light waves-yellow btn-large transparent border-buttons" style="text-align: center" >PLATTEGROND</a>
+                <a href="map.html" class="col s10 waves-effect waves-light waves-yellow btn-large transparent border-buttons" style="text-align: center" ><div class="left"><i class="fas fa-map-signs"></i></div>PLATTEGROND</a>
             </div>
             <div class="row">
                 <div class="col s1"></div>
-                <a href="agenda.html" class="col s10 waves-effect waves-light waves-yellow btn-large transparent border-buttons" style="text-align: center" >AGENDA</a>
+                <a href="agenda.html" class="col s10 waves-effect waves-light waves-yellow btn-large transparent border-buttons" style="text-align: center" ><div class="left"><i class="fas fa-calendar"></i></i></div>AGENDA</a>
             </div>
             <div class="row">
                 <div class="col s1"></div>
-                <a href="instellingen.html" class="col s10 waves-effect waves-light waves-yellow btn-large transparent border-buttons" style="text-align: center" >INSTELLINGEN</a>
+                <a href="instellingen.html" class="col s10 waves-effect waves-light waves-yellow btn-large transparent border-buttons" style="text-align: center" ><div class="left"><i class="fas fa-sliders-h"></i></div>INSTELLINGEN</a>
             </div>
     </div>
+</main>
+    <footer class="grey darken-3" style="padding-bottom: 8px; padding-top: 8px;">
+            <div class="container">
+                <a class="grey-text text-lighten-4 left" href="https://www.denieuwestad.nl/" target="_blank">&copy; 2019 denieuwestad.nl</a>
+                <!--<a class="grey-text text-lighten-4 left" href="#!"><i class="fas fa-user"></i> LOGIN</a>-->
+                <!--<a class="grey-text text-lighten-4 right" href="#!"><i class="fas fa-building"></i> LOGIN</a>-->
+            </div>
+    </footer>
     </body>
 </html>
