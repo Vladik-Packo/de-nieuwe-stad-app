@@ -30,15 +30,16 @@ var getJSON = function(url, callback) {
 };
 
 function test() {
-    getJSON('http://145.120.199.99:83/api/test',
+    //verander dit in je ip & en zoek een open port op (netstat -a -b)
+    getJSON('http://localhost/api/test',
         function(err, data) {
 
             if (err !== null) {
                 alert('Something went wrong: ' + err);
             } else {
                 for (let i = 0; i < data[0].length; i++) {
+                    
                     console.log(data[0][i].business);
-
 
                     let newDiv = document.createElement('div');
                     newDiv.className = "row";
