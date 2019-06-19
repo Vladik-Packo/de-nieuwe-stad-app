@@ -1,6 +1,5 @@
 
 
-
 var getJSON = function(url, callback) {
     var xhr = new XMLHttpRequest();
     xhr.open('GET', url, true);
@@ -33,15 +32,9 @@ function test() {
 }
 
 
-var mapid = document.getElementById('mapid');
-console.log(mapid);
-mapid.style.fill = "red";
-//console.log(geolocation.getCurrentPosition);
-
-
 var gpsX;
 var gpsY;
-document.getElementById("map").onload = function() {
+function coordinaten() {
 
 
     // Wait for Cordova to load
@@ -73,9 +66,6 @@ document.getElementById("map").onload = function() {
 
     }
 
-
-
-
     // onError Callback receives a PositionError object
     //
     function onError(error) {
@@ -86,58 +76,54 @@ document.getElementById("map").onload = function() {
 
 
 // get width and hight of svg
-    var kX = document.getElementById('map').offsetWidth;
-    var kY = document.getElementById('map').offsetHeight;
-
-    var point = document.getElementById('point');
-    var point2 = document.getElementById('point2');
-
-    var loc = document.getElementById('loc');
-
-    var gx1 = 52.16105;
-    var gy1 = 5.37796;
-
-    var gx2 = 52.16043;
-    var gy2 = 5.38119;
-
-    var kx1 = kX/5;
-    var ky1 = kY/4;
-
-    var kx2 = kX/2;
-    var ky2 = kY/2;
-
-    var gpsx = 52.15996;
-    var gpsy = 5.379383;
-
-
-    // Berekening locatie op map
-    // g = google locatie
-    // gpsX & gpsY = gsm locatie
-    // k = plattegrond
-    // n = nieuwe punt
-    //
-    // Kx1+(gpsX-Gx1)*(Kx2-Kx1)/(Gx2-Gx1) = nx
-    // Ky1+(gpsY-Gy1)*(Ky2-Ky1)/(Gy2-Gy1) = ny
-
-    var nx = kx1+(gpsx-gx1)*(kx2-kx1)/(gx2-gx1);
-    var ny = ky1+(gpsy-gy1)*(ky2-ky1)/(gy2-gy1);
-
-    loc.style.left = nx + "px";
-    loc.style.top = ny + "px";
-
-    console.log(nx + ' nx');
-    console.log(kx1 + ' kx1');
-    console.log(kx2 + ' okx2');
-
-
-
-
-    point.style.left = kX/5 + "px"; // == 52.16105
-    point.style.top = kY/4 + "px"; // == 5.37796
-
-    point2.style.left = kX/2 + "px"; // == 52.16043
-    point2.style.top = kY/2 + "px"; // == 5.38119
-
-    var test = console.log(width);
+//     var kX = document.getElementById('map').offsetWidth;
+//     var kY = document.getElementById('map').offsetHeight;
 
 };
+
+
+//leaflet
+// var map = L.map('map', {
+//     center: [51.505, -0.09],
+//     zoom: 13
+// });
+var map = L.map('mapid').setView([52.15875, 5.37577], 18);
+//18/52.16019/5.38028
+
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+}).addTo(map);
+
+L.marker([52.15875, 5.37577]).addTo(map)
+    .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
+    .openPopup();
+
+// var parser = new DOMParser();
+// var doct = parser.parseFromString('../images/svgmap.svg', "image/svg+xml");
+
+// var svgget = document.getElementById('svgmap');
+
+//console.log(svgget);
+
+
+// var parser = new DOMParser();
+// var doc = parser.parseFromString('../images/svgmap.svg', "image/svg+xml");
+
+var svgmap = document.getElementById('svgmap');
+
+// var s = new XMLSerializer();
+// var str = s.serializeToString(svgmap);
+
+
+console.log(svgmap);
+
+
+// var svgElement = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+// svgElement.setAttribute('xmlns', "http://www.w3.org/2000/svg");
+// svgElement.setAttribute('viewBox', "0 0 200 200");
+// svgElement.innerHTML = '<rect width="200" height="200"/><rect x="75" y="23" width="50" height="50" style="fill:red"/><rect x="75" y="123" width="50" height="50" style="fill:#0013ff"/>';
+var svgElementBounds = [ [ 52.162034, 5.375553 ], [ 52.159322, 5.385947 ] ];
+L.svgOverlay(svgmap, svgElementBounds).addTo(map);
+
+// linksboven 52.162034, 5.375553
+// rechtsonder 52.159322, 5.385947
