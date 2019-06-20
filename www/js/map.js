@@ -87,8 +87,12 @@ function coordinaten() {
 //     center: [51.505, -0.09],
 //     zoom: 13
 // });
-var map = L.map('mapid').setView([52.15875, 5.37577], 18);
-//18/52.16019/5.38028
+var map = L.map('mapid').setView([52.16214, 5.37555], 19);
+L.marker([52.16109, 5.37978], {
+    rotationAngle: 90
+}).addTo(map);
+//52.16109/5.37978
+//52.16029/5.37893
 
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -122,8 +126,9 @@ console.log(svgmap);
 // svgElement.setAttribute('xmlns', "http://www.w3.org/2000/svg");
 // svgElement.setAttribute('viewBox', "0 0 200 200");
 // svgElement.innerHTML = '<rect width="200" height="200"/><rect x="75" y="23" width="50" height="50" style="fill:red"/><rect x="75" y="123" width="50" height="50" style="fill:#0013ff"/>';
-var svgElementBounds = [ [ 52.162034, 5.375553 ], [ 52.159322, 5.385947 ] ];
+var svgElementBounds = [ [ 52.1620, 5.3750 ], [ 52.1587, 5.3880 ] ];
 L.svgOverlay(svgmap, svgElementBounds).addTo(map);
 
-// linksboven 52.162034, 5.375553
-// rechtsonder 52.159322, 5.385947
+// linksboven 52.1620/5.3750
+
+// rechtsonder 52.1587/5.3880
