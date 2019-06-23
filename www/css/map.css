@@ -31,10 +31,13 @@
 }
 
 /* Style the collapsible content. Note: hidden by default */
-.content {
-    padding: 0 18px;
-    background-color: white;
-    max-height: 0;
-    overflow: hidden;
+.toggle-content {
+    height: 0px;
+}
+.active {
+    border: 1px solid black;
     transition: max-height 0.2s ease-out;
+}
+.disabled {
+    display: none;
 }

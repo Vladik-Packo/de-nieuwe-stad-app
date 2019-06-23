@@ -332,22 +332,24 @@ function expand(n) {
 
                         let tgl = document.getElementById('toggle');
                         let tgl2 = document.getElementById('toggle2');
-                        if (tgl.className === "active") {
-                            tgl.className = "bleh";
-                            tgl2.style.display = "none";
-                        } else if (tgl.className === "bleh") {
-                            tgl.className = "active";
-                            tgl2.style.display = "inhered";
+                        if (tgl.className === "active info") {
+                            tgl.className = "disabled info";
+                            console.log("a");
+                        } else if (tgl.className === "disabled info") {
+                            tgl.className = "active info";
+                            console.log("b");
                         }
 
+                        let info = document.getElementsByClassName("info");
 
-                        //this.classList.toggle("active");
-                        // var content = this.nextElementSibling;
-                        // if (content.style.maxHeight){
-                        //     content.style.maxHeight = null;
-                        // } else {
-                        //     content.style.maxHeight = content.scrollHeight + "px";
-                        // }
+                        let mapX = document.getElementById('map').offsetWidth;
+
+                        info[1].innerHTML = data[n].name;
+                        info[2].innerHTML = data[n].info;
+                        tgl.style.width = mapX / 3 + "px";
+
+                        info[3].href = "";
+
                     }
 
 
