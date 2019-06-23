@@ -48,6 +48,9 @@ function Events() {
                 for (let v in data) {
                     for (let i = 0; i < data[v].length; i++) {
                         let date = new Date(data[v][i]['from']);
+                        let dateto = new Date(data[v][i]['to']);
+                        var hoursto = dateto.getHours();
+                        var minutesto = ('0' + dateto.getMinutes()).slice(-2);
                         var hours = date.getHours();
                         var minutes = ('0' + date.getMinutes()).slice(-2);
                         var dd = ('0' + date.getDate()).slice(-2);
@@ -59,13 +62,14 @@ function Events() {
                         // arr[i] = truedate;
                         var unique = arr.filter( onlyUnique );
                         var truetime = hours+':'+minutes;
+                        var truetimeto = hoursto+':'+minutesto;
                         var uniquedate = [unique[i]];
                         uniquedate = uniquedate.filter( Boolean );
 
                         $('#eventinformation').append(`<br><h5 class="white-text">` + uniquedate + `</h5>
 
                     <li>
-                    <div class="transparent collapsible-header border-buttons center-align white-text waves-effect waves-light waves-yellow btn-large text-flow" style="border-style: solid; border-width: 2px; border-color: whitesmoke;">` + truetime + ` ` + (data[v][i]['name']) + `</div>
+                    <div class="transparent collapsible-header border-buttons center-align white-text waves-effect waves-light waves-yellow btn-large text-flow" style="border-style: solid; border-width: 2px; border-color: whitesmoke;">` + truetime + ` tot `+ truetimeto + ` ` + (data[v][i]['name']) + `</div>
                     <div class="white-text collapsible-body text-flow">` + (data[v][i]['info']) + `</div>
                     </li>`);
 
