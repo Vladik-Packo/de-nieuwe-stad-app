@@ -29,6 +29,15 @@ var getJSON = function(url, callback) {
     xhr.send();
 };
 
+function onlyUnique(value, index, self) {
+    return self.indexOf(value) === index;
+}
+function flatten(arr) {
+    return arr.reduce(function (flat, toFlatten) {
+        return flat.concat(Array.isArray(toFlatten) ? flatten(toFlatten) : toFlatten);
+    }, []);
+}
+
 function Events() {
     getJSON('http://groep4.rocole.nl/api/events',
         function(err, data) {
@@ -45,12 +54,15 @@ function Events() {
                         var m = date.getMonth()+1;
                         var mm = ('0' + m).slice(-2);
                         var yyyy = date.getFullYear();
-                        var truedate = dd+'-'+mm+'-'+yyyy;
+                        var truedate = dd+`/`+mm+`/`+yyyy;
+                        var arr = [truedate];
+                        // arr[i] = truedate;
+                        var unique = arr.filter( onlyUnique );
                         var truetime = hours+':'+minutes;
-                        var title = (truedate == truedate) ? '' :  `<h5 class="white-text">` + truedate + `</h5>`;
-                        console.log(hours+':'+minutes);
+                        var uniquedate = [unique[i]];
+                        uniquedate = uniquedate.filter( Boolean );
 
-                        $('#eventinformation').append(`<br>` + title + `
+                        $('#eventinformation').append(`<br><h5 class="white-text">` + uniquedate + `</h5>
 
                     <li>
                     <div class="transparent collapsible-header border-buttons center-align white-text waves-effect waves-light waves-yellow btn-large text-flow" style="border-style: solid; border-width: 2px; border-color: whitesmoke;">` + truetime + ` ` + (data[v][i]['name']) + `</div>
