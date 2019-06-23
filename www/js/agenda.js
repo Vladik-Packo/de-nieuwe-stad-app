@@ -30,7 +30,7 @@ var getJSON = function(url, callback) {
 };
 
 function Events() {
-    getJSON('http://192.168.1.107:8000/api/events',
+    getJSON('http://groep4.rocole.nl/api/events',
         function(err, data) {
             if (err !== null) {
                 alert('Something went wrong: ' + err);
@@ -51,7 +51,7 @@ function Events() {
                         console.log(hours+':'+minutes);
 
                         $('#eventinformation').append(`<br>` + title + `
-                    
+
                     <li>
                     <div class="transparent collapsible-header border-buttons center-align white-text waves-effect waves-light waves-yellow btn-large text-flow" style="border-style: solid; border-width: 2px; border-color: whitesmoke;">` + truetime + ` ` + (data[v][i]['name']) + `</div>
                     <div class="white-text collapsible-body text-flow">` + (data[v][i]['info']) + `</div>
