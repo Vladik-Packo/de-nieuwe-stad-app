@@ -30,7 +30,7 @@ var getJSON = function(url, callback) {
 };
 
 function Business() {
-    getJSON('http://145.120.239.63:8000/api/businesses',
+    getJSON('http://192.168.1.107:8000/api/businesses',
         function(err, data) {
 
             if (err !== null) {
@@ -38,26 +38,13 @@ function Business() {
             } else {
                 for (let i = 0; i < data.length; i++) {
 
-                    let newDiv = document.createElement('div');
-                    newDiv.className = "row";
-                    // document.getElementsByClassName("container")[i].appendChild(newDiv);
 
-                    // let divTitle = document.createElement('div');
-                    newDiv.className = "col s12 collapsible-header waves-effect waves-light waves-yellow btn-large transparent border-buttons";
-                    document.getElementsByClassName('row')[i+1].appendChild(newDiv);
-                    newDiv.innerHTML = data[i]['name'];
-                    console.log(data[i]['name']);
+                    console.log( data[i] );
 
-                    // let divInfo = document.createElement('div');
-                    // divInfo.className = "col s12 collapsible-body flow-text panel grey lighten-2 z-depth-1";
-                    // document.getElementsByClassName('div')[i+1].appendChild(divInfo);
-                    // divInfo.innerHTML = data[i]['info'];
-
-                    // let moreInfo = document.createElement('a');
-                    // moreInfo.href="#";
-                    // moreInfo.innerHTML = "<br> link";
-                    // document.getElementsByClassName('col s12 flow-text panel grey lighten-2 z-depth-1')[i].appendChild(moreInfo);
-
+                    $( '#bedrijfcollapsible' ).append(`<br><li>
+                    <div class="transparent border-buttons center-align white-text waves-effect waves-light waves-yellow btn-large text-flow collapsible-header" style="border-style: solid; border-width: 2px; border-color: whitesmoke;">` + (data[i]['name']) + `</div>
+                    <div class="white-text text-flow collapsible-body">` + (data[i]['info']) + `</div>
+                    </li>`);
             }
                 $(".flip").click(function(){
                     $(this).parent().find(".panel").slideToggle("fast");

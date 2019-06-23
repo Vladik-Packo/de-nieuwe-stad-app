@@ -30,38 +30,39 @@ var getJSON = function(url, callback) {
 };
 
 function Events() {
-    getJSON('http://145.120.239.36:8000/api/events',
+    getJSON('http://192.168.1.107:8000/api/events',
         function(err, data) {
             if (err !== null) {
                 alert('Something went wrong: ' + err);
             } else {
-                for (let i = 0; i < data.length; i++) {
+                console.log(data);
+                for (let v in data) {
+                    for (let i = 0; i < data[v].length; i++) {
+                        let date = new Date(data[v][i]['from']);
+                        var hours = date.getHours();
+                        var minutes = ('0' + date.getMinutes()).slice(-2);
+                        var dd = ('0' + date.getDate()).slice(-2);
+                        var m = date.getMonth()+1;
+                        var mm = ('0' + m).slice(-2);
+                        var yyyy = date.getFullYear();
+                        var truedate = dd+'-'+mm+'-'+yyyy;
+                        var truetime = hours+':'+minutes;
+                        var title = (truedate == truedate) ? '' :  `<h5 class="white-text">` + truedate + `</h5>`;
+                        console.log(hours+':'+minutes);
 
-                    let newDiv = document.createElement('div');
-                    newDiv.className = "row";
-                    document.getElementsByClassName("container")[i].appendChild(newDiv);
+                        $('#eventinformation').append(`<br>` + title + `
+                    
+                    <li>
+                    <div class="transparent collapsible-header border-buttons center-align white-text waves-effect waves-light waves-yellow btn-large text-flow" style="border-style: solid; border-width: 2px; border-color: whitesmoke;">` + truetime + ` ` + (data[v][i]['name']) + `</div>
+                    <div class="white-text collapsible-body text-flow">` + (data[v][i]['info']) + `</div>
+                    </li>`);
 
-                    let divTitle = document.createElement('div');
-                    divTitle.className = "collapsible-header col s12 waves-effect waves-light waves-yellow btn-large transparent border-buttons";
-                    document.getElementsByClassName('row')[i+1].appendChild(divTitle);
-                    divTitle.innerHTML = data[i]['name'];
-                    console.log(data[i]['name']);
-
-                    let divInfo = document.createElement('div');
-                    divInfo.className = "col s12 collapsible-body flow-text panel grey lighten-2 z-depth-1";
-                    // document.getElementsByClassName('row')[i+1].appendChild(divInfo);
-                    divInfo.innerHTML = data[i]['business'];
-
-                    let moreInfo = document.createElement('a');
-                    moreInfo.href="#";
-                    moreInfo.innerHTML = "<br> link";
-                    document.getElementsByClassName('col s12 flow-text panel grey lighten-2 z-depth-1')[i].appendChild(moreInfo);
-
+                    }
+                    $(".flip").click(function () {
+                        $(this).parent().find(".panel").slideToggle("fast");
+                    });
+                }
             }
-                $(".flip").click(function(){
-                    $(this).parent().find(".panel").slideToggle("fast");
-                });
-        }
     });
 }
 Events();
