@@ -1,9 +1,16 @@
 <html>
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-    <meta name="csrf-token" content="" />
-    <title>Agenda</title>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
+    <title>Bedrijven</title>
+
+    <script src="js/app.js"></script>
+    <!-- Cordova -->
+    <script src="cordova.js" type="text/javascript" defer></script>
 
     <link href="css/app.css" rel="stylesheet" />
     <!-- Google Fonts -->
@@ -11,37 +18,131 @@
     <!-- Font Awesome -->
     <link href="css/fa/css/all.min.css" rel="stylesheet">
 
-    <!--<link rel="stylesheet" type="text/css" href="css/instellingen.css">-->
+    <link rel="stylesheet" href="css/bedrijfspagina.css">
 
-    <!--<script src="js/app.js"></script>-->
-    <!-- Cordova -->
-    <script src="https://code.jquery.com/jquery-latest.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="cordova.js" type="text/javascript" defer></script>
+    <style>
+        .border-buttons{
+            border-style: solid;
+            border-width: 2px;
+            border-color: whitesmoke;
+        }
+        .drag-target{
+            width: 46px;
+        }
+        body {
+            display: flex;
+            min-height: 100vh;
+            flex-direction: column;
+        }
+
+        main {
+            flex: 1 0 auto;
+        }
+        hr{
+            margin-left: 50px;
+            display: block;
+            height: 1px;
+            border: 0;
+            border-top: 4px solid white;
+            padding: 0;
+        }
+        .row{
+            margin-bottom: 10px;
+        }
+        h4{
+            font-family: 'Ubuntu Mono', monospace;
+        }
+        li{
+            font-family: 'Ubuntu Mono', monospace;
+        }
+        a{
+            font-family: 'Ubuntu Mono', monospace;
+        }
+        button{
+            font-family: 'Ubuntu Mono', monospace;
+        }
+        label{
+            font-family: 'Ubuntu Mono', monospace;
+        }
+        nav .sidenav-trigger i{
+            width: 100px;
+            text-align: right;
+        }
+        .collapsible-header{
+            border: 0;
+        }
+        .collapsible-body{
+            border: 0;
+        }
+        .collapsible{
+            border: 0;
+            box-shadow: 0 0 0 0 rgba(0,0,0,0);
+        }
+    </style>
+    <script>
+        $( function () {
+            $( document ).on( 'deviceready' , function () {
+                $( '#device' ).html( device.model );
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            var elems = document.querySelectorAll('.collapsible');
+            var instances = M.Collapsible.init(elems, {accordion: false});
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            var elems = document.querySelectorAll('.sidenav');
+            var instances = M.Sidenav.init(elems, { edge: 'right'});
+        });
+
+    </script>
 </head>
 <body style="background-image:url(images/background3.png)">
-<a href="index.html" class="btn btn-small red darken-3">Terug</a>
+<nav class="nav-wrapper grey darken-3">
+    <div class="container">
+        <a href="index.html" class="left">
+            <i class="fas fa-chevron-left" style="width: 50px; padding-top: 15px;"></i>
+        </a>
+        <a href="#" class="sidenav-trigger right" data-target="mobile-links">
+            <i class="fas fa-bars"></i>
+        </a>
+        <ul class="left hide-on-med-and-down">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="bedrijf.html">BEDRIJVEN</a></li>
+            <li><a href="map.html">PLATTEGROND</a></li>
+            <li><a href="agenda.html">AGENDA</a></li>
+            <li><a href="instellingen.html">INSTELLINGEN</a></li>
+            <li><a href="logingebruiker.html">LOGIN VOOR GEBRUIKERS</a></li>
+            <li><a href="loginbedrijven.html">LOGIN VOOR BEDRIJVEN</a></li>
+        </ul>
+    </div>
+</nav>
+
+<ul class="sidenav" id="mobile-links">
+    <li><a href="index.html">HOME</a></li>
+    <li><a href="bedrijf.html">BEDRIJVEN</a></li>
+    <li><a href="map.html">PLATTEGROND</a></li>
+    <li><a href="agenda.html">AGENDA</a></li>
+    <li><a href="instellingen.html">INSTELLINGEN</a></li>
+    <li><a href="logingebruiker.html">LOGIN VOOR GEBRUIKERS</a></li>
+    <li><a href="loginbedrijven.html">LOGIN VOOR BEDRIJVEN</a></li>
+</ul>
+<main>
 <div class="container">
     <div class="row">
         <br>
-        <br>
-        <div class="col s12 center flow-text"><h4>Agenda</h4></div>
-    </div>
-    <br>
-    <div class="row">
-        <div class="flow-text">Dinsdag 09/04/2019</div>
-        <hr>
-        <div class="flow-text">Music Arena <div class="right">14:00</div></div>
-        <div class="flow-text">BBQ <div class="right">15:00</div></div>
-        <div class="flow-text">Fietsen <div class="right">16:30</div></div>
-        <br>
-        <div class="flow-text">Woensdag 10/04/2019</div>
-        <hr>
-        <div class="flow-text">Music Arena <div class="right">14:00</div></div>
-        <div class="flow-text">BBQ <div class="right">15:00</div></div>
-        <div class="flow-text">Fietsen <div class="right">16:30</div></div>
+        <div class="col s12 center flow-text" style="color: white;"><h4>AGENDA</h4></div>
     </div>
 </div>
-
+    <br>
+    <div class="container">
+        <div class="row" style="overflow-y: scroll;">
+            <ul class="collapsible" id="eventinformation">
+            </ul>
+        </div>
+    </div>
+</main>
+<script src="js/agenda.js"></script>
 </body>
 </html>

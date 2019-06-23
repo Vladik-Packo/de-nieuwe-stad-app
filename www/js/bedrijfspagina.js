@@ -29,37 +29,22 @@ var getJSON = function(url, callback) {
     xhr.send();
 };
 
-function test() {
-    getJSON('http://localhost/api/test',
+function Business() {
+    getJSON('http://groep4.rocole.nl/api/businesses',
         function(err, data) {
 
             if (err !== null) {
                 alert('Something went wrong: ' + err);
             } else {
-                for (let i = 0; i < data[0].length; i++) {
-                    
-                    console.log(data[0][i].business);
+                for (let i = 0; i < data.length; i++) {
 
-                    let newDiv = document.createElement('div');
-                    newDiv.className = "row";
-                    document.getElementsByClassName("container")[1].appendChild(newDiv);
 
-                    let divTitle = document.createElement('div');
-                    divTitle.className = "col s12 waves-effect waves-light btn-large flip red darken-3";
-                    document.getElementsByClassName('row')[i+1].appendChild(divTitle);
-                    divTitle.innerHTML = data[0][i].business.name;
-                    console.log(data[0][i].business.name);
+                    console.log( data[i] );
 
-                    let divInfo = document.createElement('div');
-                    divInfo.className = "col s12 flow-text panel grey lighten-2 z-depth-1";
-                    document.getElementsByClassName('row')[i+1].appendChild(divInfo);
-                    divInfo.innerHTML = data[0][i].business.information;
-
-                    let moreInfo = document.createElement('a');
-                    moreInfo.href="#";
-                    moreInfo.innerHTML = "<br> link";
-                    document.getElementsByClassName('col s12 flow-text panel grey lighten-2 z-depth-1')[i].appendChild(moreInfo);
-
+                    $( '#bedrijfcollapsible' ).append(`<br><li>
+                    <div class="transparent border-buttons center-align white-text waves-effect waves-light waves-yellow btn-large text-flow collapsible-header" style="border-style: solid; border-width: 2px; border-color: whitesmoke;">` + (data[i]['name']) + `</div>
+                    <div class="white-text text-flow collapsible-body">` + (data[i]['info']) + `</div>
+                    </li>`);
             }
                 $(".flip").click(function(){
                     $(this).parent().find(".panel").slideToggle("fast");
@@ -67,3 +52,4 @@ function test() {
         }
     });
 }
+Business();
