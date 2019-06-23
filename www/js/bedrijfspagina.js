@@ -30,7 +30,7 @@ var getJSON = function(url, callback) {
 };
 
 function Business() {
-    getJSON('http://145.120.239.63:8000/api/businesses',
+    getJSON('http://groep4.rocole.nl/api/businesses',
         function(err, data) {
 
             if (err !== null) {

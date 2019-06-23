@@ -30,7 +30,7 @@ var getJSON = function(url, callback) {
 };
 
 function Events() {
-    getJSON('http://145.120.239.36:8000/api/events',
+    getJSON('http://groep4.rocole.nl/api/events',
         function(err, data) {
             if (err !== null) {
                 alert('Something went wrong: ' + err);
