@@ -10,6 +10,9 @@
     <content src="index.html" />
     <icon src="icon.png" />
     <access origin="*" />
+    <allow-intent href="*" />
+    <allow-navigation href="*" />
+    <gap:plugin name="cordova-plugin-whitelist" source="npm" />
     <plugin name="cordova-plugin-dialogs" spec="~2.0.1" />
     <plugin name="cordova-plugin-bluetoothle" spec="~4.5.3" />
     <plugin name="cordova-plugin-device" spec="~2.0.2" />
