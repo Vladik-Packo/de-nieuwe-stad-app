@@ -1,33 +1,39 @@
-var getJSON = function(url, callback) {
-    var xhr = new XMLHttpRequest();
-    xhr.open('GET', url, true);
-    xhr.responseType = 'json';
-    xhr.onload = function() {
-        var status = xhr.status;
-        if (status === 200) {
-            callback(null, xhr.response);
-        } else {
-            callback(status, xhr.response);
-        }
-    };
-    xhr.send();
-};
+// var getJSON = function(url, callback) {
+//     var xhr = new XMLHttpRequest();
+//     xhr.open('GET', url, true);
+//     xhr.responseType = 'json';
+//     xhr.onload = function() {
+//         var status = xhr.status;
+//         if (status === 200) {
+//             callback(null, xhr.response);
+//         } else {
+//             callback(status, xhr.response);
+//         }
+//     };
+//     xhr.send();
+// };
+//
+// function test() {
+//     getJSON('http://145.120.199.7/mappoint',
+//         function(err, data) {
+//
+//             if (err !== null) {
+//                 alert('Something went wrong: ' + err);
+//             } else {
+//                 for (let i = 0; i < data[0].length; i++) {
+//                     console.log(data);
+//
+//
+//                 }
+//             }
+//         });
+// }
 
-function test() {
-    getJSON('http://145.120.199.7/mappoint',
-        function(err, data) {
-
-            if (err !== null) {
-                alert('Something went wrong: ' + err);
-            } else {
-                for (let i = 0; i < data[0].length; i++) {
-                    console.log(data);
+let data;
 
 
-                }
-            }
-        });
-}
+
+
 
 
 var mapid = document.getElementById('mapid');
@@ -216,8 +222,9 @@ function gpspoints() {
         }
     }
 
+horeca = document.getElementsByClassName('horeca');
 
-function makeMap() {
+    function makeMap(data) {
     var mapX = document.getElementById('map').offsetWidth;
     var mapY = document.getElementById('map').offsetHeight;
 
@@ -227,13 +234,11 @@ function makeMap() {
     console.log(mapY);
     console.log(mapX / mapY);
     console.log(mapY * z);
-    let horeca = document.getElementsByClassName('horeca');
     for (i = 0; i < horeca.length; i++) {
         horeca[i].style.width = mapX / 55 + "px";
         horeca[i].style.height = mapX / 55 + "px";
         horeca[i].style.borderRadius = "100%";
         horeca[i].style.backgroundColor = "green";
-        console.log(horeca[0]);
     }
 
     let points = [
@@ -253,6 +258,7 @@ function makeMap() {
 
     horeca[0].style.left = points[0].x * mapX + "px";
     horeca[0].style.top = points[0].y * mapY + "px";
+    //horeca[0].onclick = expand(0);
 
     horeca[1].style.left = points[1].x * mapX + "px";
     horeca[1].style.top = points[1].y * mapY + "px";
@@ -269,8 +275,83 @@ function makeMap() {
     horeca[5].style.left = points[5].x * mapX + "px";
     horeca[5].style.top =  points[5].y * mapY + "px";
 
-    console.log(document.getElementById('map').offsetTop);
 
+
+}
+// console.log(horeca.length + " hooreekaa");
+//     horeca[0].onclick = function() {
+//         console.log("yadidyada")
+//     };
+//
+//
+//     for (i = 0; i < horeca.length; i++) {
+//         horeca[i].onclick = function () {
+//             console.log("horeca bedrijf: " + horeca[i-1]);
+//             horeca[i-1].style.backgroundColor = "black";
+//         }
+//     }
+//
+//         horeca.onclick = function () {
+//             console.log("horeca bedrijf: ");
+//         }
+
+// document.addEventListener('DOMContentLoaded', function() {
+//     var elems = document.querySelectorAll('.collapsible');
+//     var instances = M.Collapsible.init(elems, accordion);
+// });
+
+function expand(n) {
+    console.log(n + "yeeettt" + data);
+
+        var getJSON = function(url, callback) {
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', url, true);
+            xhr.responseType = 'json';
+            xhr.onload = function() {
+                var status = xhr.status;
+                if (status === 200) {
+                    callback(null, xhr.response);
+                } else {
+                    callback(status, xhr.response);
+                }
+            };
+            xhr.send();
+        };
+
+
+        getJSON('http://groep4.rocole.nl/api/businesses/',
+            function(err, data) {
+
+                if (err !== null) {
+                    alert('Something went wrong: ' + err);
+                } else {
+                    console.log(n);
+
+
+                   // var coll = document.getElementsByClassName("collapsible");
+
+                        let tgl = document.getElementById('toggle');
+                        let tgl2 = document.getElementById('toggle2');
+                        if (tgl.className === "active") {
+                            tgl.className = "bleh";
+                            tgl2.style.display = "none";
+                        } else if (tgl.className === "bleh") {
+                            tgl.className = "active";
+                            tgl2.style.display = "inhered";
+                        }
+
+
+                        //this.classList.toggle("active");
+                        // var content = this.nextElementSibling;
+                        // if (content.style.maxHeight){
+                        //     content.style.maxHeight = null;
+                        // } else {
+                        //     content.style.maxHeight = content.scrollHeight + "px";
+                        // }
+                    }
+
+
+            });
 
 
 

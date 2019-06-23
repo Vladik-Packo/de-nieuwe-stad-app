@@ -30,7 +30,6 @@ var getJSON = function(url, callback) {
 };
 
 function test() {
-    //verander dit in je ip & en zoek een open port op (netstat -a -b)
     getJSON('http://localhost/api/test',
         function(err, data) {
 
