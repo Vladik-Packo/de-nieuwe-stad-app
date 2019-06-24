@@ -31,11 +31,6 @@
 
 let data;
 
-
-
-
-
-
 var mapid = document.getElementById('mapid');
 console.log(mapid);
 mapid.style.fill = "red";
@@ -152,7 +147,7 @@ function gpspoints() {
 
     var x, y = 0;       // variables that will contain the coordinates
 
-// Get X and Y position of the elm (from: vishalsays.wordpress.com)
+
     function getXYpos(elm) {
         x = elm.offsetLeft;        // set x to elm’s offsetLeft
         y = elm.offsetTop;         // set y to elm’s offsetTop
@@ -223,10 +218,20 @@ function gpspoints() {
     }
 
 horeca = document.getElementsByClassName('horeca');
+winkel = document.getElementsByClassName('winkel');
+bedrijf = document.getElementsByClassName('bedrijf');
 
     function makeMap(data) {
     var mapX = document.getElementById('map').offsetWidth;
     var mapY = document.getElementById('map').offsetHeight;
+
+    let imgsize = document.getElementById('imgsize');
+    let imgmargin = window.getComputedStyle(imgsize, null).getPropertyValue("margin-left");
+
+    imgmargin = parseInt(imgmargin);
+
+    mapX = mapX + (imgmargin * 2);
+    console.log(imgmargin + " img margin");
 
     let z = mapX / mapY;
 
@@ -235,10 +240,22 @@ horeca = document.getElementsByClassName('horeca');
     console.log(mapX / mapY);
     console.log(mapY * z);
     for (i = 0; i < horeca.length; i++) {
-        horeca[i].style.width = mapX / 55 + "px";
-        horeca[i].style.height = mapX / 55 + "px";
+        horeca[i].style.width = mapX / 25 + "px";
+        horeca[i].style.height = mapX / 25 + "px";
         horeca[i].style.borderRadius = "100%";
         horeca[i].style.backgroundColor = "green";
+    }
+    for (i = 0; i < horeca.length; i++) {
+        winkel[i].style.width = mapX / 25 + "px";
+        winkel[i].style.height = mapX / 25 + "px";
+        winkel[i].style.borderRadius = "100%";
+        winkel[i].style.backgroundColor = "yellow";
+    }
+    for (i = 0; i < horeca.length; i++) {
+        bedrijf[i].style.width = mapX / 25 + "px";
+        bedrijf[i].style.height = mapX / 25 + "px";
+        bedrijf[i].style.borderRadius = "100%";
+        bedrijf[i].style.backgroundColor = "red";
     }
 
     let points = [
@@ -256,24 +273,24 @@ horeca = document.getElementsByClassName('horeca');
     //console.log(points[0].x);
     //points[0].x / mapX;
 
-    horeca[0].style.left = points[0].x * mapX + "px";
-    horeca[0].style.top = points[0].y * mapY + "px";
+    horeca[0].style.left = points[0].x * mapX  + "px";
+    horeca[0].style.top = points[0].y * mapY  + "px";
     //horeca[0].onclick = expand(0);
 
-    horeca[1].style.left = points[1].x * mapX + "px";
-    horeca[1].style.top = points[1].y * mapY + "px";
-
-    horeca[2].style.left = points[2].x * mapX + "px";
-    horeca[2].style.top =  points[2].y * mapY + "px";
-
-    horeca[3].style.left = points[3].x * mapX + "px";
-    horeca[3].style.top =  points[3].y * mapY + "px";
-
-    horeca[4].style.left = points[4].x * mapX + "px";
-    horeca[4].style.top =  points[4].y * mapY + "px";
-
-    horeca[5].style.left = points[5].x * mapX + "px";
-    horeca[5].style.top =  points[5].y * mapY + "px";
+    // horeca[1].style.left = points[1].x * mapX  + "px";
+    // horeca[1].style.top = points[1].y * mapY  + "px";
+    //
+    // horeca[2].style.left = points[2].x * mapX  + "px";
+    // horeca[2].style.top =  points[2].y * mapY  + "px";
+    //
+    // horeca[3].style.left = points[3].x * mapX  + "px";
+    // horeca[3].style.top =  points[3].y * mapY  + "px";
+    //
+    // horeca[4].style.left = points[4].x * mapX  + "px";
+    // horeca[4].style.top =  points[4].y * mapY  + "px";
+    //
+    // horeca[5].style.left = points[5].x * mapX  + "px";
+    // horeca[5].style.top =  points[5].y * mapY  + "px";
 
 
 
@@ -300,8 +317,12 @@ horeca = document.getElementsByClassName('horeca');
 //     var instances = M.Collapsible.init(elems, accordion);
 // });
 
+document.getElementById('map').onclick = function () {
+    let tgl = document.getElementById('toggle');
+    tgl.className = "disabled info";
+};
+
 function expand(n) {
-    console.log(n + "yeeettt" + data);
 
         var getJSON = function(url, callback) {
             var xhr = new XMLHttpRequest();
@@ -344,11 +365,15 @@ function expand(n) {
 
                         let mapX = document.getElementById('map').offsetWidth;
 
+                        imgsize = document.getElementById('imgsize');
+                        imgmargin = window.getComputedStyle(imgsize, null).getPropertyValue("margin-left");
+                        console.log(imgmargin + 'okok');
+
+
                         info[1].innerHTML = data[n].name;
                         info[2].innerHTML = data[n].info;
                         tgl.style.width = mapX / 3 + "px";
 
-                        info[3].href = "";
 
                     }
 
