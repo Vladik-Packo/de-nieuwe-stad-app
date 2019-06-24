@@ -44,7 +44,7 @@ function Business() {
                     $( '#bedrijfcollapsible' ).append(`<br><li>
                     <div class="transparent border-buttons center-align white-text waves-effect waves-light waves-yellow btn-large text-flow collapsible-header" style="border-style: solid; border-width: 2px; border-color: whitesmoke;">` + (data[i]['name']) + `</div>
                     <div class="white-text text-flow collapsible-body">` + (data[i]['info']) + `</div>
-                    <a href="` + (data[i]['website']) + `" class="center-align blue-text waves-effect waves-light waves-yellow text-flow collapsible-body">` + (data[i]['website']) + `</a>
+                    <a href="` + (data[i]['website']) + `" class="center-align blue-text flow-text collapsible-body">` + (data[i]['website']) + `</a>
                     </li>`);
             }
                 $(".flip").click(function(){
